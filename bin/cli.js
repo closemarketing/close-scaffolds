@@ -15,6 +15,7 @@ const chalk = require('chalk');
 const fs = require('fs-extra');
 const path = require('path');
 const ScaffoldGenerator = require('../lib/generator');
+const LintGenerator = require('../lib/generator-lint');
 
 const program = new Command();
 
@@ -36,7 +37,7 @@ program
   .action(async (scaffold, options) => {
     try {
       // Validate scaffold type
-      const validScaffolds = ['pluginwp'];
+      const validScaffolds = ['pluginwp', 'lint'];
       if (!validScaffolds.includes(scaffold)) {
         console.error(chalk.red(`❌ Invalid scaffold type: ${scaffold}`));
         console.log(chalk.yellow('Available scaffolds:'));
@@ -44,7 +45,12 @@ program
         process.exit(1);
       }
 
-      const generator = new ScaffoldGenerator(scaffold);
+      let generator;
+      if (scaffold === 'lint') {
+        generator = new LintGenerator('lint');
+      } else {
+        generator = new ScaffoldGenerator(scaffold);
+      }
       
       // Si no se proporcionan opciones, usar modo interactivo
       if (!options.name) {
@@ -52,10 +58,10 @@ program
           {
             type: 'input',
             name: 'name',
-            message: 'Plugin name:',
+            message: scaffold === 'lint' ? 'Project name:' : 'Plugin name:',
             validate: (input) => {
               if (!input.trim()) {
-                return 'Plugin name is required';
+                return 'Name is required';
               }
               return true;
             }
@@ -63,7 +69,7 @@ program
           {
             type: 'input',
             name: 'description',
-            message: 'Plugin description:',
+            message: scaffold === 'lint' ? 'Project description:' : 'Plugin description:',
             default: 'Plugin description'
           },
           {
@@ -74,44 +80,16 @@ program
           },
           {
             type: 'input',
-            name: 'prefix',
-            message: 'Plugin prefix (e.g., msp, MyPlugin):',
-            validate: (input) => {
-              if (!input.trim()) {
-                return 'Plugin prefix is required';
-              }
-              if (!/^[a-zA-Z_]+$/.test(input)) {
-                return 'Prefix must contain only letters and underscores';
-              }
-              return true;
-            }
-          },
-          {
-            type: 'input',
             name: 'output',
             message: 'Output directory:',
             default: './'
-          },
-          {
-            type: 'checkbox',
-            name: 'features',
-            message: 'Select features to include:',
-            choices: [
-              { name: 'Custom Post Types', value: 'post-types', checked: true },
-              { name: 'Custom Login', value: 'custom-login', checked: true },
-              { name: 'Theme Integration', value: 'theme', checked: true },
-              { name: 'WooCommerce Integration', value: 'woocommerce', checked: false },
-              { name: 'Blocks', value: 'blocks', checked: false },
-              { name: 'Shortcodes', value: 'shortcodes', checked: false },
-              { name: 'PHPStan (static analysis)', value: 'phpstan', checked: true }
-            ]
           }
         ]);
         
         Object.assign(options, answers);
       }
       
-      const scaffoldName = scaffold === 'pluginwp' ? 'WordPress plugin' : scaffold;
+      const scaffoldName = scaffold === 'pluginwp' ? 'WordPress plugin' : (scaffold === 'lint' ? 'Lint (PHPStan) files' : scaffold);
       console.log(chalk.blue(`🚀 Generating ${scaffoldName}...`));
       
       await generator.generate(options);
@@ -132,6 +110,7 @@ program
   .action(() => {
     console.log(chalk.blue('📦 Available scaffolds:\n'));
     console.log(chalk.white('  pluginwp') + chalk.gray('     - WordPress plugin with custom post types, theme integration'));
+    console.log(chalk.white('  lint') + chalk.gray('         - PHPStan config scaffold'));
     console.log(chalk.gray('  themewp      - WordPress theme (coming soon)'));
     console.log(chalk.gray('  block        - Gutenberg block (coming soon)'));
     console.log(chalk.gray('  react-app    - React application (coming soon)'));
