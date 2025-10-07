@@ -166,7 +166,7 @@ class CLOSE_WPAdmin {
 	 */
 	public function custom_login_logo() {
 		echo '<style type="text/css">
-		h1 a { background-image:url(' . esc_url( {{CONSTANT_NAME}}_PLUGIN_URL ) . 'includes/custom-login/logo-login.svg) !important; width: 320px !important; background-size: 320px !important; }
+		h1 a { background-image:url(' . esc_url( {{PREFIX_UPPER}}_PLUGIN_URL ) . 'includes/custom-login/logo-login.svg) !important; width: 320px !important; background-size: 320px !important; }
 		body.login {background: #D4ECED; }
 		.login label {color:#0A878B;}
 		.login form { background: white; border: 3px solid #0A878B;}
@@ -207,7 +207,7 @@ class CLOSE_WPAdmin {
 			}
 			.wc-install.ultp-pro-notice, .license-warning.notice.notice-error.is-dismissible {	display: none; }			#wpadminbar #wp-admin-bar-wp-logo>.ab-item {
 				padding: 0;
-				background-image: url( ' . esc_url( {{CONSTANT_NAME}}_PLUGIN_URL ) . 'includes/custom-login/logo-mini.svg) !important;
+				background-image: url( ' . esc_url( {{PREFIX_UPPER}}_PLUGIN_URL ) . 'includes/custom-login/logo-mini.svg) !important;
 				background-size: 88%;
 				background-position: center;
 				background-repeat: no-repeat;

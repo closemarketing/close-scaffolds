@@ -146,8 +146,9 @@ El scaffold reemplaza automáticamente las siguientes variables:
 - `{{PLUGIN_DESCRIPTION}}`: Descripción del plugin
 - `{{PLUGIN_AUTHOR}}`: Autor del plugin
 - `{{PLUGIN_SLUG}}`: Slug del plugin (nombre en minúsculas con guiones)
-- `{{PREFIX}}`: Prefijo para funciones
-- `{{CONSTANT_NAME}}`: Nombre de constantes (nombre en mayúsculas)
+- `{{PREFIX}}`: Prefijo para funciones (minúsculas: `msp_`)
+- `{{PREFIX_UPPER}}`: Prefijo para constantes (mayúsculas: `MSP_`)
+- `{{CONSTANT_NAME}}`: Nombre completo del plugin en mayúsculas (`MI_SUPER_PLUGIN_`)
 - `{{CLASS_NAME}}`: Nombre de clases
 - `{{TEXT_DOMAIN}}`: Dominio de texto para i18n
 - `{{VERSION}}`: Versión del plugin

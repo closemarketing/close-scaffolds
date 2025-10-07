@@ -75,13 +75,13 @@ program
           {
             type: 'input',
             name: 'prefix',
-            message: 'Plugin prefix (for functions):',
+            message: 'Plugin prefix (e.g., msp, MyPlugin):',
             validate: (input) => {
               if (!input.trim()) {
                 return 'Plugin prefix is required';
               }
-              if (!/^[a-z_]+$/.test(input)) {
-                return 'Prefix must contain only lowercase letters and underscores';
+              if (!/^[a-zA-Z_]+$/.test(input)) {
+                return 'Prefix must contain only letters and underscores';
               }
               return true;
             }

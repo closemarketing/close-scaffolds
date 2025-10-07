@@ -1,5 +1,5 @@
-=== Close boilerplate ===
-Contributors: closemarketing, davidperez, sacrajaimez, angiemulero, alexbreagarcia, matiasquero, manoloramos
+=== {{PLUGIN_NAME}} ===
+Contributors: closemarketing, davidperez, sacrajaimez, angiemulero, alexbreagarcia, matiasquero
 
 Desarrollo del plugin para la maquetación y creación del sitio boilerplate.com.
 

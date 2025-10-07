@@ -4,8 +4,8 @@
  *
  * @package    WordPress
  * @author     Closemarketing
- * @copyright  2025 Closemarketing
- * @version    1.0
+ * @copyright  {{CURRENT_YEAR}} Closemarketing
+ * @version    {{VERSION}}
  */
 
 add_action( 'admin_init', '{{PREFIX}}_remove_google_fonts_array' );
@@ -29,9 +29,9 @@ add_action( 'wp_enqueue_scripts', '{{PREFIX}}_theme_scripts', 99 );
 function {{PREFIX}}_theme_scripts() {
 	wp_enqueue_style(
 		'{{TEXT_DOMAIN}}',
-		{{CONSTANT_NAME}}_PLUGIN_URL . 'includes/theme/style.css',
+		{{PREFIX_UPPER}}_PLUGIN_URL . 'includes/theme/style.css',
 		array(),
-		{{CONSTANT_NAME}}_VERSION
+		{{PREFIX_UPPER}}_VERSION
 	);
 
 	// Optimizacion de carga de estilos.

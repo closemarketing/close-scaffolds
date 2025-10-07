@@ -24,10 +24,10 @@
 
 defined( 'ABSPATH' ) || die( 'No script kiddies please!' );
 
-define( '{{CONSTANT_NAME}}_VERSION', '{{VERSION}}' );
-define( '{{CONSTANT_NAME}}_PLUGIN', __FILE__ );
-define( '{{CONSTANT_NAME}}_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( '{{CONSTANT_NAME}}_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+define( '{{PREFIX_UPPER}}_VERSION', '{{VERSION}}' );
+define( '{{PREFIX_UPPER}}_PLUGIN', __FILE__ );
+define( '{{PREFIX_UPPER}}_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( '{{PREFIX_UPPER}}_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 
 add_action( 'plugins_loaded', '{{PREFIX}}_plugin_init' );
 /**
@@ -40,26 +40,26 @@ function {{PREFIX}}_plugin_init() {
 }
 
 // Admin Custom Login.
-require_once {{CONSTANT_NAME}}_PLUGIN_PATH . 'includes/custom-login/class-ccaa-admin.php';
+require_once {{PREFIX_UPPER}}_PLUGIN_PATH . 'includes/custom-login/class-ccaa-admin.php';
 
 // Post Types.
-require_once {{CONSTANT_NAME}}_PLUGIN_PATH . 'includes/post-types/cpt-testimonios.php';
-require_once {{CONSTANT_NAME}}_PLUGIN_PATH . 'includes/post-types/cpt-empresas.php';
+require_once {{PREFIX_UPPER}}_PLUGIN_PATH . 'includes/post-types/cpt-testimonios.php';
+require_once {{PREFIX_UPPER}}_PLUGIN_PATH . 'includes/post-types/cpt-empresas.php';
 
 /*
 // Blocks.
-require_once {{CONSTANT_NAME}}_PLUGIN_PATH . 'includes/blocks/register/index.php';
-require_once {{CONSTANT_NAME}}_PLUGIN_PATH . 'includes/blocks-meta/titles/block.php';
-require_once {{CONSTANT_NAME}}_PLUGIN_PATH . 'includes/blocks-meta/testimonios/block.php';
-require_once {{CONSTANT_NAME}}_PLUGIN_PATH . 'includes/blocks-meta/empresas/block.php';
-require_once {{CONSTANT_NAME}}_PLUGIN_PATH . 'includes/blocks-meta/opiniones/block.php';
+require_once {{PREFIX_UPPER}}_PLUGIN_PATH . 'includes/blocks/register/index.php';
+require_once {{PREFIX_UPPER}}_PLUGIN_PATH . 'includes/blocks-meta/titles/block.php';
+require_once {{PREFIX_UPPER}}_PLUGIN_PATH . 'includes/blocks-meta/testimonios/block.php';
+require_once {{PREFIX_UPPER}}_PLUGIN_PATH . 'includes/blocks-meta/empresas/block.php';
+require_once {{PREFIX_UPPER}}_PLUGIN_PATH . 'includes/blocks-meta/opiniones/block.php';
 */
 
 // Shortcodes.
-//require_once {{CONSTANT_NAME}}_PLUGIN_PATH . 'includes/shortcodes/shortcode-one.php';
+//require_once {{PREFIX_UPPER}}_PLUGIN_PATH . 'includes/shortcodes/shortcode-one.php';
 
 // WooCommerce.
-// require_once {{CONSTANT_NAME}}_PLUGIN_PATH . 'includes/woocommerce/loader.php';
+// require_once {{PREFIX_UPPER}}_PLUGIN_PATH . 'includes/woocommerce/loader.php';
 
 // Theme.
 
@@ -73,6 +73,6 @@ add_filter( 'stylesheet_directory', '{{PREFIX}}_filter_stylesheet_directory', 10
  * @return string
  */
 function {{PREFIX}}_filter_stylesheet_directory( $stylesheet_dir, $stylesheet, $theme_root ) {
-	$stylesheet_dir = {{CONSTANT_NAME}}_PLUGIN_PATH . 'includes/theme';
+	$stylesheet_dir = {{PREFIX_UPPER}}_PLUGIN_PATH . 'includes/theme';
 	return $stylesheet_dir;
 }
