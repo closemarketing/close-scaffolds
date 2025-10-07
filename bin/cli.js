@@ -116,7 +116,7 @@ program
       await generator.generate(options);
       
       console.log(chalk.green(`✅ ${scaffoldName} generated successfully!`));
-      console.log(chalk.yellow(`📁 Location: ${path.resolve(options.output, options.name.toLowerCase().replace(/\s+/g, '-'))}`));
+      console.log(chalk.yellow(`📁 Location: ${path.resolve(options.output)}`));
       
     } catch (error) {
       console.error(chalk.red('❌ Error generating project:'), error.message);
