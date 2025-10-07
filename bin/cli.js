@@ -102,7 +102,8 @@ program
               { name: 'Theme Integration', value: 'theme', checked: true },
               { name: 'WooCommerce Integration', value: 'woocommerce', checked: false },
               { name: 'Blocks', value: 'blocks', checked: false },
-              { name: 'Shortcodes', value: 'shortcodes', checked: false }
+              { name: 'Shortcodes', value: 'shortcodes', checked: false },
+              { name: 'PHPStan (static analysis)', value: 'phpstan', checked: true }
             ]
           }
         ]);
