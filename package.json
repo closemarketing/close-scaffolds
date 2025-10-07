@@ -1,6 +1,6 @@
 {
   "name": "@closetechnology/scaffolds",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI tool to generate WordPress plugins based on Close Marketing boilerplate with custom post types, theme integration, and more",
   "main": "lib/generator.js",
   "bin": {
@@ -59,4 +59,3 @@
     "EXAMPLES.md"
   ]
 }
-
