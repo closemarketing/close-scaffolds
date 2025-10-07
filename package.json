@@ -1,0 +1,61 @@
+{
+  "name": "@closetechnology/scaffolds",
+  "version": "1.0.1",
+  "description": "CLI tool to generate WordPress plugins based on Close Marketing boilerplate with custom post types, theme integration, and more",
+  "main": "lib/generator.js",
+  "bin": {
+    "close-scaffold": "./bin/cli.js",
+    "wp-scaffold": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "node bin/cli.js create pluginwp",
+    "list": "node bin/cli.js list",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "chmod +x bin/cli.js"
+  },
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "scaffold",
+    "generator",
+    "cli",
+    "closemarketing",
+    "boilerplate",
+    "wp-plugin",
+    "custom-post-types",
+    "gutenberg",
+    "woocommerce"
+  ],
+  "author": {
+    "name": "Closemarketing",
+    "email": "info@close.marketing",
+    "url": "https://close.marketing"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/closemarketing/close-scaffolds.git"
+  },
+  "bugs": {
+    "url": "https://github.com/closemarketing/close-scaffolds/issues"
+  },
+  "homepage": "https://github.com/closemarketing/close-scaffolds#readme",
+  "license": "GPL-2.0-or-later",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^9.4.1",
+    "fs-extra": "^11.1.1",
+    "inquirer": "^8.2.6"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "templates/",
+    "README.md",
+    "QUICKSTART.md",
+    "EXAMPLES.md"
+  ]
+}
