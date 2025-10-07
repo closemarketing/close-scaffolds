@@ -1,0 +1,109 @@
+/*
+	Theme Name: Close·marketing
+	Theme URI: https://close.marketing
+	Description: Tema realizado creado a medida en WordPress.
+	Author: closemarketing
+	Author URI: https://close.marketing
+
+	Version: 1.0
+
+	Template: generatepress
+
+	License: GPL-2.0+
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+
+/**
+ * ## Cookies Banner
+ * --------------------------- */
+
+#moove_gdpr_cookie_info_bar {
+  min-height: 30vh;
+  width: 82%;
+  margin: 30% auto;
+  left: 9%;
+  padding: 5% 0;
+}
+
+#moove_gdpr_cookie_info_bar.moove-gdpr-info-bar-hidden {
+  min-height: auto;
+  z-index: -1;
+  bottom: -2000px;
+}
+
+#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content {
+  display: block;
+}
+
+#moove_gdpr_cookie_info_bar .moove-gdpr-cookie-notice {
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p,
+#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p a {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-allow-all {
+  font-size: 22px;
+}
+
+#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-reject-btn {
+  background: none;
+  color: black;
+}
+
+#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-reject-btn {
+  color: white;
+}
+
+#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-reject-btn:hover {
+  color: black;
+}
+
+#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme {
+  background-color: rgba(22, 33, 47, 0.9);
+}
+
+#moove_gdpr_cookie_info_bar.moove-gdpr-light-scheme {
+  border: 5px solid black;
+}
+
+#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content .moove-gdpr-button-holder {
+  padding-left: 0;
+  display: block;
+  text-align: center;
+}
+
+#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content .moove-gdpr-branding-cnt {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  #moove_gdpr_cookie_info_bar {
+    min-height: 80vh;
+    width: 80%;
+    margin: 0;
+    left: 10%;
+  }
+
+  #moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container {
+    width: 95%;
+    padding: 15px 10px;
+  }
+
+  #moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p,
+  #moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p a {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  #moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-allow-all {
+    font-size: 18px;
+    white-space: break-spaces;
+    line-height: 28px;
+  }
+}

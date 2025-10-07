@@ -1,0 +1,42 @@
+# Git files
+.git/
+.gitignore
+.gitattributes
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files
+test/
+tests/
+*.test.js
+*.spec.js
+
+# Documentation drafts
+drafts/
+TODO.md
+
+# Development files
+.editorconfig
+.eslintrc
+.prettierrc
+
+# Example outputs (no incluir plugins generados)
+examples/output/
+tmp/
+
+# Node modules (se instalan automáticamente)
+node_modules/
+
+# Lock files (optional, depends on your preference)
+# package-lock.json
+# yarn.lock
+

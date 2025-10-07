@@ -1,0 +1,17 @@
+.distignore
+.editorconfig
+.git
+.gitignore
+.travis.yml
+circle.yml
+.DS_Store
+.github
+.cursor
+composer.json
+composer.lock
+.wordpress-org
+*.sql
+*.tar.gz
+*.zip
+*.po
+*.pot
