@@ -1,0 +1,15 @@
+includes:
+  - vendor/php-stubs/wordpress-stubs/wordpress-stubs.neon
+  - vendor/szepeviktor/phpstan-wordpress/extension.neon
+  - vendor/szepeviktor/phpstan-wordpress/rules.neon
+
+parameters:
+  level: 7
+  paths:
+    - plugin.php
+    - includes
+  bootstrapFiles:
+    - vendor/autoload.php
+  excludes_analyse:
+    - includes/blocks/**/build/**
+  checkGenericClassInNonGenericObjectType: false
