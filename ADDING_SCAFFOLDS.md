@@ -18,6 +18,15 @@ templates/
 │       ├── blocks/
 │       ├── shortcodes/
 │       └── woocommerce/
+├── lint/           # Scaffold para linting y análisis estático
+│   ├── composer.json
+│   ├── phpcs.xml
+│   ├── phpstan.neon
+│   ├── phpstan-bootstrap.php
+│   ├── lint.sh
+│   ├── .gitignore
+│   ├── README.md
+│   └── USAGE.md
 └── [future-scaffold]/  # Aquí irán otros scaffolds
 ```
 
@@ -131,6 +140,35 @@ Si añadiste un nuevo CLI, añádelo a `bin`:
     "nuevo-scaffold": "./bin/cli-nuevo-scaffold.js"
   }
 }
+```
+
+## Scaffolds Disponibles
+
+### Scaffold de Lint (✅ Implementado)
+
+```
+templates/
+└── lint/
+    ├── composer.json (PHPStan y WPCS)
+    ├── phpcs.xml (WordPress Coding Standards)
+    ├── phpstan.neon (PHPStan config)
+    ├── phpstan-bootstrap.php (Bootstrap para análisis)
+    ├── lint.sh (Script ejecutable)
+    ├── .gitignore
+    ├── README.md
+    └── USAGE.md
+```
+
+**Uso:**
+```bash
+# Copiar al plugin
+cp -r close-scaffolds/templates/lint/* mi-plugin/
+
+# Instalar dependencias
+cd mi-plugin && composer install
+
+# Ejecutar linting
+./lint.sh
 ```
 
 ## Ejemplos de Scaffolds Futuros

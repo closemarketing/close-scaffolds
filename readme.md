@@ -48,6 +48,7 @@ close-scaffold list
 
 Muestra todos los scaffolds disponibles:
 - `pluginwp` - WordPress Plugin
+- `lint` - PHPStan y WordPress Coding Standards
 - `block` - Gutenberg Block (próximamente)
 
 ### Modo Interactivo (Recomendado)
@@ -171,9 +172,39 @@ npm start
 # Resultado: ./mi-super-plugin/
 ```
 
+## 🔍 Scaffold de Linting
+
+El scaffold `lint` proporciona configuración de PHPStan y WordPress Coding Standards para tu plugin:
+
+```bash
+# Copiar configuración de lint a tu plugin
+cd wp-content/plugins/mi-plugin
+cp -r ../close-scaffolds/templates/lint/* .
+
+# Instalar dependencias
+composer install
+
+# Ejecutar linting
+./lint.sh
+
+# Auto-corregir errores
+./lint.sh fix
+```
+
+**Incluye:**
+- ✅ PHPStan con extensiones de WordPress
+- ✅ PHP_CodeSniffer con WordPress Coding Standards
+- ✅ PHPCompatibility para verificar compatibilidad PHP
+- ✅ Scripts automatizados para linting
+- ✅ Configuración pre-establecida y personalizable
+
+Ver [templates/lint/README.md](templates/lint/README.md) para más detalles.
+
 ## 📚 Documentación Adicional
 
 - [EXAMPLES.md](EXAMPLES.md) - Ejemplos de uso detallados
+- [ADDING_SCAFFOLDS.md](ADDING_SCAFFOLDS.md) - Cómo añadir nuevos scaffolds
+- [templates/lint/USAGE.md](templates/lint/USAGE.md) - Guía de uso del scaffold de lint
 - Ver el código fuente del boilerplate en `../`
 
 ## 🎯 Ventajas sobre otros métodos

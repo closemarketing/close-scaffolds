@@ -1,0 +1,39 @@
+includes:
+    - vendor/szepeviktor/phpstan-wordpress/extension.neon
+
+parameters:
+    level: 6
+    
+    paths:
+        - .
+    
+    excludePaths:
+        - vendor
+        - node_modules
+        - includes/theme/patterns
+        - includes/blocks/*/build
+        - includes/blocks/node_modules
+    
+    bootstrapFiles:
+        - phpstan-bootstrap.php
+    
+    # WordPress configuration
+    scanDirectories:
+        - vendor/szepeviktor/phpstan-wordpress/stubs
+    
+    # Ignore specific errors
+    ignoreErrors:
+        # WordPress functions that are loaded dynamically
+        - '#Function (get_field|the_field|have_rows|get_row|the_row) not found#'
+        # ACF Pro functions
+        - '#Function acf_add_local_field_group not found#'
+        # WooCommerce functions
+        - '#Function (is_woocommerce|is_shop|is_product) not found#'
+    
+    # Check for missing typehints
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    
+    # Memory limit
+    memoryLimit: 2G
+

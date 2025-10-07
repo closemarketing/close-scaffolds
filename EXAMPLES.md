@@ -91,7 +91,72 @@ close-scaffold create pluginwp
 
 ---
 
-## Ejemplo 5: Listar scaffolds disponibles
+## Ejemplo 5: Añadir linting a un plugin existente
+
+```bash
+# Navega a tu plugin
+cd wp-content/plugins/mi-plugin
+
+# Copia la configuración de lint
+cp -r ../close-scaffolds/templates/lint/* .
+
+# Instala las dependencias de linting
+composer install
+
+# Ejecuta el linting
+composer lint
+```
+
+**Resultado:**
+```
+========================================
+  Running all linting tools
+========================================
+
+Running PHP_CodeSniffer...
+✓ PHPCS: No coding standard violations found
+
+Running PHPStan...
+✓ PHPStan: No errors found
+
+========================================
+✓ All linting checks passed!
+```
+
+**Auto-corregir problemas:**
+```bash
+./lint.sh fix
+```
+
+---
+
+## Ejemplo 6: Integrar linting en un plugin nuevo
+
+```bash
+# Crear un nuevo plugin
+close-scaffold create pluginwp
+# Sigue los prompts...
+
+# Navega al nuevo plugin
+cd mi-super-plugin
+
+# Añade configuración de lint
+cp -r ../close-scaffolds/templates/lint/* .
+
+# Edita las variables en los archivos de configuración
+# o usa search/replace si tienes los valores:
+# {{PLUGIN_NAME}}, {{PREFIX}}, {{TEXT_DOMAIN}}, etc.
+
+# Instala dependencias
+composer install
+
+# Ejecuta linting
+./lint.sh
+```
+
+---
+
+## Ejemplo 7: Listar scaffolds disponibles
 
 ```bash
 close-scaffold list
@@ -102,6 +167,7 @@ close-scaffold list
 📦 Available scaffolds:
 
   pluginwp     - WordPress plugin with custom post types, theme integration
+  lint         - PHPStan and WordPress Coding Standards configuration
   themewp      - WordPress theme (coming soon)
   block        - Gutenberg block (coming soon)
   react-app    - React application (coming soon)
@@ -218,6 +284,38 @@ npm install
 
 ---
 
+## Comandos de Linting
+
+### Ejecutar todos los linters
+```bash
+composer lint
+# o
+./lint.sh
+```
+
+### Solo PHPCS
+```bash
+composer phpcs
+# o
+./lint.sh phpcs
+```
+
+### Solo PHPStan
+```bash
+composer phpstan
+# o
+./lint.sh phpstan
+```
+
+### Auto-corregir
+```bash
+composer lint:fix
+# o
+./lint.sh fix
+```
+
+---
+
 ## Próximos pasos
 
 Una vez generado tu plugin:
@@ -227,5 +325,6 @@ Una vez generado tu plugin:
 3. ✅ Ajusta los estilos del tema
 4. ✅ Añade tus propias funcionalidades
 5. ✅ Actualiza el `readme.txt` con información específica
+6. ✅ **Añade linting** con el scaffold `lint` para mantener calidad de código
 
 ¡Disfruta desarrollando plugins de WordPress más rápido!
