@@ -1,26 +1,26 @@
 # 🚀 Close Plugin Scaffold
 
-Herramienta CLI para generar plugins de WordPress basados en el boilerplate de Close Marketing. Ahorra tiempo y mantén la consistencia en todos tus proyectos.
+CLI tool for generating WordPress plugins based on Close Marketing's boilerplate. Save time and maintain consistency across all your projects.
 
-## ✨ Características
+## ✨ Features
 
-- 🎯 **Generación rápida**: Crea un plugin completo en segundos
-- 🔧 **Personalizable**: Elige solo las características que necesitas
-- 📝 **Variables dinámicas**: Reemplaza automáticamente nombres, prefijos y constantes
-- 🎨 **Interactivo**: Modo con prompts o línea de comandos
-- ♻️ **Reutilizable**: Basado en el boilerplate probado de Close Marketing
+- 🎯 **Fast generation**: Create a complete plugin in seconds
+- 🔧 **Customizable**: Choose only the features you need
+- 📝 **Dynamic variables**: Automatically replace names, prefixes and constants
+- 🎨 **Interactive**: Prompt mode or command line
+- ♻️ **Reusable**: Based on Close Marketing's proven boilerplate
 
-## 📦 Instalación
+## 📦 Installation
 
-### Opción 1: Instalación global desde npm (Recomendado)
+### Option 1: Global installation from npm (Recommended)
 
 ```bash
 npm install -g @closetechnology/scaffolds
 ```
 
-Ahora puedes usar `close-scaffold` o `wp-scaffold` desde cualquier directorio.
+Now you can use `close-scaffold` or `wp-scaffold` from any directory.
 
-### Opción 2: Instalación desde el repositorio
+### Option 2: Installation from repository
 
 ```bash
 git clone https://github.com/closemarketing/close-scaffolds.git
@@ -29,7 +29,7 @@ npm install
 npm link
 ```
 
-### Opción 3: Uso local sin instalación global
+### Option 3: Local use without global installation
 
 ```bash
 git clone https://github.com/closemarketing/close-scaffolds.git
@@ -38,34 +38,34 @@ npm install
 npm start
 ```
 
-## 🎮 Uso
+## 🎮 Usage
 
-### Ver Scaffolds Disponibles
+### View Available Scaffolds
 
 ```bash
 close-scaffold list
 ```
 
-Muestra todos los scaffolds disponibles:
+Shows all available scaffolds:
 - `pluginwp` - WordPress Plugin
-- `lint` - PHPStan y WordPress Coding Standards
-- `block` - Gutenberg Block (próximamente)
+- `lint` - PHPStan and WordPress Coding Standards
+- `block` - Gutenberg Block (coming soon)
 
-### Modo Interactivo (Recomendado)
+### Interactive Mode (Recommended)
 
-El modo interactivo te guía paso a paso:
+Interactive mode guides you step by step:
 
 ```bash
 close-scaffold create pluginwp
-# o desde el repositorio
+# or from the repository
 npm start
 ```
 
-**Ejemplo de sesión interactiva:**
+**Example interactive session:**
 ```
-? Plugin name: Mi Super Plugin
-? Plugin description: Plugin para gestión de contenido
-? Author: Tu Nombre
+? Plugin name: My Super Plugin
+? Plugin description: Plugin for content management
+? Author: Your Name
 ? Plugin prefix (for functions): msp
 ? Output directory: ./
 ? Select features to include: 
@@ -77,48 +77,48 @@ npm start
   ◯ Shortcodes
 ```
 
-### Modo con Opciones (Automatizado)
+### Options Mode (Automated)
 
-Para scripts o automatización:
+For scripts or automation:
 
 ```bash
 close-scaffold create pluginwp \
-  --name "Mi Plugin" \
+  --name "My Plugin" \
   --prefix "mp" \
-  --description "Descripción del plugin" \
-  --author "Tu Nombre" \
+  --description "Plugin description" \
+  --author "Your Name" \
   --output "./"
 ```
 
-## Opciones Disponibles
+## Available Options
 
-- `--name, -n`: Nombre del plugin
-- `--prefix, -p`: Prefijo para funciones (solo letras minúsculas y guiones bajos)
-- `--description, -d`: Descripción del plugin
-- `--author, -a`: Autor del plugin
-- `--output, -o`: Directorio de salida (por defecto: `./`)
+- `--name, -n`: Plugin name
+- `--prefix, -p`: Function prefix (lowercase letters and underscores only)
+- `--description, -d`: Plugin description
+- `--author, -a`: Plugin author
+- `--output, -o`: Output directory (default: `./`)
 
-## Características Incluidas
+## Included Features
 
-El scaffold genera plugins con las siguientes características:
+The scaffold generates plugins with the following features:
 
-### ✅ Siempre Incluidas
-- Estructura básica del plugin
-- Sistema de constantes y prefijos
-- Internacionalización (i18n)
-- Custom Login personalizado
-- Custom Post Types (Testimonios y Empresas)
-- Integración con tema
+### ✅ Always Included
+- Basic plugin structure
+- Constants and prefixes system
+- Internationalization (i18n)
+- Custom login
+- Custom Post Types (Testimonials and Companies)
+- Theme integration
 
-### 🔧 Opcionales
-- Bloques de Gutenberg
+### 🔧 Optional
+- Gutenberg blocks
 - Shortcodes
-- Integración con WooCommerce
+- WooCommerce integration
 
-## Estructura Generada
+## Generated Structure
 
 ```
-mi-plugin/
+my-plugin/
 ├── plugin.php
 ├── readme.txt
 └── includes/
@@ -127,145 +127,145 @@ mi-plugin/
     │   ├── logo-login.svg
     │   └── logo-mini.svg
     ├── post-types/
-    │   ├── cpt-testimonios.php
-    │   └── cpt-empresas.php
+    │   ├── cpt-testimonials.php
+    │   └── cpt-companies.php
     ├── theme/
     │   ├── functions.php
     │   ├── style.css
     │   ├── style-editor.css
     │   └── assets/
-    ├── blocks/ (opcional)
-    ├── shortcodes/ (opcional)
-    └── woocommerce/ (opcional)
+    ├── blocks/ (optional)
+    ├── shortcodes/ (optional)
+    └── woocommerce/ (optional)
 ```
 
-## Variables de Plantilla
+## Template Variables
 
-El scaffold reemplaza automáticamente las siguientes variables:
+The scaffold automatically replaces the following variables:
 
-- `{{PLUGIN_NAME}}`: Nombre del plugin
-- `{{PLUGIN_DESCRIPTION}}`: Descripción del plugin
-- `{{PLUGIN_AUTHOR}}`: Autor del plugin
-- `{{PLUGIN_SLUG}}`: Slug del plugin (nombre en minúsculas con guiones)
-- `{{PREFIX}}`: Prefijo para funciones (minúsculas: `msp_`)
-- `{{PREFIX_UPPER}}`: Prefijo para constantes (mayúsculas: `MSP_`)
-- `{{CONSTANT_NAME}}`: Nombre completo del plugin en mayúsculas (`MI_SUPER_PLUGIN_`)
-- `{{CLASS_NAME}}`: Nombre de clases
-- `{{TEXT_DOMAIN}}`: Dominio de texto para i18n
-- `{{VERSION}}`: Versión del plugin
-- `{{CURRENT_YEAR}}`: Año actual
+- `{{PLUGIN_NAME}}`: Plugin name
+- `{{PLUGIN_DESCRIPTION}}`: Plugin description
+- `{{PLUGIN_AUTHOR}}`: Plugin author
+- `{{PLUGIN_SLUG}}`: Plugin slug (lowercase name with hyphens)
+- `{{PREFIX}}`: Function prefix (lowercase: `msp_`)
+- `{{PREFIX_UPPER}}`: Constants prefix (uppercase: `MSP_`)
+- `{{CONSTANT_NAME}}`: Full plugin name in uppercase (`MY_SUPER_PLUGIN_`)
+- `{{CLASS_NAME}}`: Class names
+- `{{TEXT_DOMAIN}}`: Text domain for i18n
+- `{{VERSION}}`: Plugin version
+- `{{CURRENT_YEAR}}`: Current year
 
-## Ejemplo de Uso
+## Usage Example
 
 ```bash
-# Generar plugin interactivamente
+# Generate plugin interactively
 npm start
 
-# Respuestas del prompt:
-# Plugin name: Mi Super Plugin
-# Plugin description: Plugin para gestión de contenido
-# Author: Mi Nombre
+# Prompt responses:
+# Plugin name: My Super Plugin
+# Plugin description: Plugin for content management
+# Author: My Name
 # Plugin prefix: msp
 # Output directory: ./
 # Features: [✓] Custom Post Types [✓] Custom Login [✓] Theme Integration
 
-# Resultado: ./mi-super-plugin/
+# Result: ./my-super-plugin/
 ```
 
-## 🔍 Scaffold de Linting
+## 🔍 Linting Scaffold
 
-El scaffold `lint` proporciona configuración de PHPStan y WordPress Coding Standards para tu plugin:
+The `lint` scaffold provides PHPStan and WordPress Coding Standards configuration for your plugin:
 
 ```bash
-# Copiar configuración de lint a tu plugin
-cd wp-content/plugins/mi-plugin
+# Copy lint configuration to your plugin
+cd wp-content/plugins/my-plugin
 cp -r ../close-scaffolds/templates/lint/* .
 
-# Instalar dependencias
+# Install dependencies
 composer install
 
-# Ejecutar linting
+# Run linting
 ./lint.sh
 
-# Auto-corregir errores
+# Auto-fix errors
 ./lint.sh fix
 ```
 
-**Incluye:**
-- ✅ PHPStan con extensiones de WordPress
-- ✅ PHP_CodeSniffer con WordPress Coding Standards
-- ✅ PHPCompatibility para verificar compatibilidad PHP
-- ✅ Scripts automatizados para linting
-- ✅ Configuración pre-establecida y personalizable
+**Includes:**
+- ✅ PHPStan with WordPress extensions
+- ✅ PHP_CodeSniffer with WordPress Coding Standards
+- ✅ PHPCompatibility to check PHP compatibility
+- ✅ Automated linting scripts
+- ✅ Pre-configured and customizable setup
 
-Ver [templates/lint/README.md](templates/lint/README.md) para más detalles.
+See [templates/lint/README.md](templates/lint/README.md) for more details.
 
-## 📚 Documentación Adicional
+## 📚 Additional Documentation
 
-- [EXAMPLES.md](EXAMPLES.md) - Ejemplos de uso detallados
-- [ADDING_SCAFFOLDS.md](ADDING_SCAFFOLDS.md) - Cómo añadir nuevos scaffolds
-- [templates/lint/USAGE.md](templates/lint/USAGE.md) - Guía de uso del scaffold de lint
-- Ver el código fuente del boilerplate en `../`
+- [EXAMPLES.md](EXAMPLES.md) - Detailed usage examples
+- [ADDING_SCAFFOLDS.md](ADDING_SCAFFOLDS.md) - How to add new scaffolds
+- [templates/lint/USAGE.md](templates/lint/USAGE.md) - Lint scaffold usage guide
+- See the boilerplate source code in `../`
 
-## 🎯 Ventajas sobre otros métodos
+## 🎯 Advantages over other methods
 
-### vs. Copiar y Pegar manualmente
-- ❌ Manual: Copiar carpetas, buscar/reemplazar en múltiples archivos, propenso a errores
-- ✅ Scaffold: Un comando, todo automatizado, sin errores
+### vs. Manual Copy and Paste
+- ❌ Manual: Copy folders, search/replace in multiple files, error-prone
+- ✅ Scaffold: One command, everything automated, error-free
 
 ### vs. WP-CLI scaffold
-- ❌ WP-CLI: Estructura genérica, sin personalización de Close Marketing
-- ✅ Scaffold: Estructura probada, incluye login customizado, post types, tema
+- ❌ WP-CLI: Generic structure, no Close Marketing customization
+- ✅ Scaffold: Proven structure, includes custom login, post types, theme
 
 ### vs. NPX create-*
-- ❌ NPX: Requiere publicar en npm, más complejo de mantener
-- ✅ Scaffold: Local, fácil de modificar, control total
+- ❌ NPX: Requires publishing to npm, more complex to maintain
+- ✅ Scaffold: Local, easy to modify, full control
 
-## 🔧 Desarrollo y Personalización
+## 🔧 Development and Customization
 
-### Modificar plantillas
+### Modify templates
 
-Las plantillas están en `templates/`:
+Templates are located in `templates/`:
 ```
 templates/
-├── plugin.php      # Plantilla del archivo principal
-└── readme.txt      # Plantilla del readme
+├── plugin.php      # Main file template
+└── readme.txt      # Readme template
 ```
 
-**Variables disponibles en plantillas:**
-- `{{PLUGIN_NAME}}` - Nombre del plugin
-- `{{PLUGIN_DESCRIPTION}}` - Descripción
-- `{{PLUGIN_AUTHOR}}` - Autor
-- `{{PREFIX}}` - Prefijo de funciones
-- `{{CONSTANT_NAME}}` - Nombre de constantes
-- `{{TEXT_DOMAIN}}` - Dominio de texto
-- `{{VERSION}}` - Versión
-- `{{CURRENT_YEAR}}` - Año actual
+**Available variables in templates:**
+- `{{PLUGIN_NAME}}` - Plugin name
+- `{{PLUGIN_DESCRIPTION}}` - Description
+- `{{PLUGIN_AUTHOR}}` - Author
+- `{{PREFIX}}` - Function prefix
+- `{{CONSTANT_NAME}}` - Constants name
+- `{{TEXT_DOMAIN}}` - Text domain
+- `{{VERSION}}` - Version
+- `{{CURRENT_YEAR}}` - Current year
 
-### Modificar la lógica del generador
+### Modify generator logic
 
-Edita `lib/generator.js` para:
-- Cambiar cómo se procesan los archivos
-- Añadir nuevas características
-- Modificar el sistema de reemplazo de variables
+Edit `lib/generator.js` to:
+- Change how files are processed
+- Add new features
+- Modify variable replacement system
 
-### Añadir nuevas características
+### Add new features
 
-1. Edita `bin/cli.js` y añade la opción en el prompt:
+1. Edit `bin/cli.js` and add the option in the prompt:
 ```javascript
 {
-  name: 'Mi Nueva Feature',
-  value: 'mi-feature',
+  name: 'My New Feature',
+  value: 'my-feature',
   checked: false
 }
 ```
 
-2. Edita `lib/generator.js` y añade la lógica de copia:
+2. Edit `lib/generator.js` and add the copy logic:
 ```javascript
-if (features.includes('mi-feature')) {
+if (features.includes('my-feature')) {
   await this.copyDirectory(
-    path.join(this.sourceDir, 'includes/mi-feature'),
-    path.join(includesDir, 'mi-feature'),
+    path.join(this.sourceDir, 'includes/my-feature'),
+    path.join(includesDir, 'my-feature'),
     templateData
   );
 }
@@ -275,48 +275,48 @@ if (features.includes('mi-feature')) {
 
 ### Error: "Directory already exists"
 ```bash
-rm -rf nombre-del-plugin
+rm -rf plugin-name
 npm start
 ```
 
-### Error de permisos
+### Permission error
 ```bash
-chmod 755 /directorio/destino
+chmod 755 /destination/directory
 ```
 
-### Dependencias desactualizadas
+### Outdated dependencies
 ```bash
 rm -rf node_modules package-lock.json
 npm install
 ```
 
-### El CLI no se ejecuta
+### CLI won't execute
 ```bash
 chmod +x bin/cli.js
 ```
 
-## 🤝 Contribuir
+## 🤝 Contributing
 
-Este scaffold es para uso interno de Close Marketing, pero puedes:
+This scaffold is for Close Marketing's internal use, but you can:
 
-1. Crear issues para reportar bugs
-2. Proponer mejoras en la estructura
-3. Sugerir nuevas características
+1. Create issues to report bugs
+2. Propose improvements to the structure
+3. Suggest new features
 
 ## 📝 Changelog
 
 ### v1.0.0 (2025-10-07)
-- ✨ Primera versión del scaffold
-- 🎯 Modo interactivo con prompts
-- 📝 Sistema de plantillas con variables dinámicas
-- 🔧 Selección de características opcional
-- 📦 Generación completa de plugins
+- ✨ First version of the scaffold
+- 🎯 Interactive mode with prompts
+- 📝 Template system with dynamic variables
+- 🔧 Optional feature selection
+- 📦 Complete plugin generation
 
-## 📄 Licencia
+## 📄 License
 
-GPL-2.0+ - Misma licencia que WordPress
+GPL-2.0+ - Same license as WordPress
 
 ---
 
-**Desarrollado por [Close Marketing](https://close.marketing)** 🚀
+**Developed by [Close Marketing](https://close.marketing)** 🚀
 

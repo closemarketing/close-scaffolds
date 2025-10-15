@@ -18,15 +18,6 @@ templates/
 │       ├── blocks/
 │       ├── shortcodes/
 │       └── woocommerce/
-├── lint/           # Scaffold para linting y análisis estático
-│   ├── composer.json
-│   ├── phpcs.xml
-│   ├── phpstan.neon
-│   ├── phpstan-bootstrap.php
-│   ├── lint.sh
-│   ├── .gitignore
-│   ├── README.md
-│   └── USAGE.md
 └── [future-scaffold]/  # Aquí irán otros scaffolds
 ```
 
@@ -40,9 +31,8 @@ Todos los archivos en `templates/` pueden usar estas variables que serán reempl
 | `{{PLUGIN_DESCRIPTION}}` | Descripción | "Plugin para gestión" |
 | `{{PLUGIN_AUTHOR}}` | Autor | "David Perez" |
 | `{{PLUGIN_SLUG}}` | Slug (minúsculas con guiones) | "mi-super-plugin" |
-| `{{PREFIX}}` | Prefijo para funciones (minúsculas) | "msp" |
-| `{{PREFIX_UPPER}}` | Prefijo para constantes (mayúsculas) | "MSP" |
-| `{{CONSTANT_NAME}}` | Nombre completo en constantes | "MI_SUPER_PLUGIN" |
+| `{{PREFIX}}` | Prefijo para funciones | "msp" |
+| `{{CONSTANT_NAME}}` | Nombre de constantes | "MI_SUPER_PLUGIN" |
 | `{{CLASS_NAME}}` | Nombre de clases | "MiSuperPlugin" |
 | `{{TEXT_DOMAIN}}` | Dominio de texto | "misuperplugin" |
 | `{{VERSION}}` | Versión | "1.0.0" |
@@ -72,11 +62,8 @@ Crea tus archivos de plantilla usando las variables `{{VARIABLE}}`:
  * @version {{VERSION}}
  */
 
-// Constantes con prefijo en mayúsculas
-define( '{{PREFIX_UPPER}}_VERSION', '{{VERSION}}' );
-define( '{{PREFIX_UPPER}}_PATH', __DIR__ );
+define( '{{CONSTANT_NAME}}_VERSION', '{{VERSION}}' );
 
-// Funciones con prefijo en minúsculas
 function {{PREFIX}}_init() {
     // Tu código aquí
 }
@@ -140,35 +127,6 @@ Si añadiste un nuevo CLI, añádelo a `bin`:
     "nuevo-scaffold": "./bin/cli-nuevo-scaffold.js"
   }
 }
-```
-
-## Scaffolds Disponibles
-
-### Scaffold de Lint (✅ Implementado)
-
-```
-templates/
-└── lint/
-    ├── composer.json (PHPStan y WPCS)
-    ├── phpcs.xml (WordPress Coding Standards)
-    ├── phpstan.neon (PHPStan config)
-    ├── phpstan-bootstrap.php (Bootstrap para análisis)
-    ├── lint.sh (Script ejecutable)
-    ├── .gitignore
-    ├── README.md
-    └── USAGE.md
-```
-
-**Uso:**
-```bash
-# Copiar al plugin
-cp -r close-scaffolds/templates/lint/* mi-plugin/
-
-# Instalar dependencias
-cd mi-plugin && composer install
-
-# Ejecutar linting
-./lint.sh
 ```
 
 ## Ejemplos de Scaffolds Futuros

@@ -1,15 +1,15 @@
-# Ejemplos de Uso del Close Plugin Scaffold
+# Close Plugin Scaffold Usage Examples
 
-## Ejemplo 1: Crear un plugin básico con prompts interactivos
+## Example 1: Create a basic plugin with interactive prompts
 
 ```bash
 close-scaffold create pluginwp
 ```
 
-**Respuestas de ejemplo:**
+**Example responses:**
 ```
-? Plugin name: Mi Super Plugin
-? Plugin description: Plugin para gestión avanzada de contenido
+? Plugin name: My Super Plugin
+? Plugin description: Plugin for advanced content management
 ? Author: David Pérez
 ? Plugin prefix (for functions): msp
 ? Output directory: ../
@@ -22,10 +22,10 @@ close-scaffold create pluginwp
   ◯ Shortcodes
 ```
 
-**Resultado:**
+**Result:**
 ```
-📁 ../mi-super-plugin/
-├── plugin.php (con prefijo msp_)
+📁 ../my-super-plugin/
+├── plugin.php (with msp_ prefix)
 ├── readme.txt
 └── includes/
     ├── custom-login/
@@ -35,35 +35,35 @@ close-scaffold create pluginwp
 
 ---
 
-## Ejemplo 2: Crear plugin con línea de comandos
+## Example 2: Create plugin with command line
 
 ```bash
 close-scaffold create pluginwp \
   --name "E-Commerce Manager" \
   --prefix "ecm" \
-  --description "Gestión avanzada de productos WooCommerce" \
+  --description "Advanced WooCommerce product management" \
   --author "Closemarketing" \
   --output "./"
 ```
 
-**Resultado:**
+**Result:**
 - Plugin: `e-commerce-manager`
-- Funciones con prefijo: `ecm_`
-- Constantes: `E_COMMERCE_MANAGER_VERSION`
+- Functions with prefix: `ecm_`
+- Constants: `E_COMMERCE_MANAGER_VERSION`
 - Text domain: `ecommercemanager`
 
 ---
 
-## Ejemplo 3: Crear plugin para cliente específico
+## Example 3: Create plugin for specific client
 
 ```bash
 close-scaffold create pluginwp
 ```
 
-**Respuestas:**
+**Responses:**
 ```
 ? Plugin name: NMR63 Motos Custom
-? Plugin description: Personalizaciones para sitio de motos
+? Plugin description: Customizations for motorcycle site
 ? Author: Closemarketing
 ? Plugin prefix: nmr63
 ? Output directory: ./
@@ -78,36 +78,36 @@ close-scaffold create pluginwp
 
 ---
 
-## Ejemplo 4: Usar el scaffold instalado globalmente
+## Example 4: Use the globally installed scaffold
 
 ```bash
-# Instalar globalmente (solo una vez)
+# Install globally (only once)
 npm install -g @closetechnology/scaffolds
 
-# Usar desde cualquier lugar
-cd ~/Proyectos/nuevo-sitio
+# Use from anywhere
+cd ~/Projects/new-site
 close-scaffold create pluginwp
 ```
 
 ---
 
-## Ejemplo 5: Añadir linting a un plugin existente
+## Example 5: Add linting to an existing plugin
 
 ```bash
-# Navega a tu plugin
-cd wp-content/plugins/mi-plugin
+# Navigate to your plugin
+cd wp-content/plugins/my-plugin
 
-# Copia la configuración de lint
+# Copy lint configuration
 cp -r ../close-scaffolds/templates/lint/* .
 
-# Instala las dependencias de linting
+# Install linting dependencies
 composer install
 
-# Ejecuta el linting
+# Run linting
 composer lint
 ```
 
-**Resultado:**
+**Result:**
 ```
 ========================================
   Running all linting tools
@@ -123,46 +123,46 @@ Running PHPStan...
 ✓ All linting checks passed!
 ```
 
-**Auto-corregir problemas:**
+**Auto-fix issues:**
 ```bash
 ./lint.sh fix
 ```
 
 ---
 
-## Ejemplo 6: Integrar linting en un plugin nuevo
+## Example 6: Integrate linting into a new plugin
 
 ```bash
-# Crear un nuevo plugin
+# Create a new plugin
 close-scaffold create pluginwp
-# Sigue los prompts...
+# Follow the prompts...
 
-# Navega al nuevo plugin
-cd mi-super-plugin
+# Navigate to the new plugin
+cd my-super-plugin
 
-# Añade configuración de lint
+# Add lint configuration
 cp -r ../close-scaffolds/templates/lint/* .
 
-# Edita las variables en los archivos de configuración
-# o usa search/replace si tienes los valores:
+# Edit the variables in the configuration files
+# or use search/replace if you have the values:
 # {{PLUGIN_NAME}}, {{PREFIX}}, {{TEXT_DOMAIN}}, etc.
 
-# Instala dependencias
+# Install dependencies
 composer install
 
-# Ejecuta linting
+# Run linting
 ./lint.sh
 ```
 
 ---
 
-## Ejemplo 7: Listar scaffolds disponibles
+## Example 7: List available scaffolds
 
 ```bash
 close-scaffold list
 ```
 
-**Salida:**
+**Output:**
 ```
 📦 Available scaffolds:
 
@@ -177,35 +177,35 @@ Usage: close-scaffold create <scaffold>
 
 ---
 
-## Estructura de archivos generados
+## Generated file structure
 
-### Plugin con todas las características:
+### Plugin with all features:
 
 ```
-mi-plugin/
-├── plugin.php                    # Archivo principal del plugin
-├── readme.txt                    # Documentación del plugin
+my-plugin/
+├── plugin.php                    # Main plugin file
+├── readme.txt                    # Plugin documentation
 └── includes/
-    ├── custom-login/             # Personalización del login
+    ├── custom-login/             # Login customization
     │   ├── class-ccaa-admin.php
     │   ├── logo-login.svg
     │   └── logo-mini.svg
     ├── post-types/               # Custom Post Types
-    │   ├── cpt-testimonios.php
-    │   └── cpt-empresas.php
-    ├── theme/                    # Integración con tema
+    │   ├── cpt-testimonials.php
+    │   └── cpt-companies.php
+    ├── theme/                    # Theme integration
     │   ├── functions.php
     │   ├── style.css
     │   ├── style-editor.css
     │   ├── assets/
     │   ├── images/
     │   └── patterns/
-    ├── woocommerce/              # Integración WooCommerce
+    ├── woocommerce/              # WooCommerce integration
     │   ├── loader.php
     │   ├── class-cart.php
     │   ├── class-checkout.php
     │   └── ...
-    ├── blocks/                   # Bloques Gutenberg
+    ├── blocks/                   # Gutenberg blocks
     │   ├── register/
     │   ├── news/
     │   └── ...
@@ -215,68 +215,68 @@ mi-plugin/
 
 ---
 
-## Tips y buenas prácticas
+## Tips and best practices
 
-### Prefijos recomendados
+### Recommended prefixes
 
-- **3-4 letras** para nombres cortos: `msp`, `ecm`, `su`
-- **Acrónimos del proyecto**: `nmr63`, `cmk`
-- **Sin números al inicio**: ❌ `3wp` → ✅ `wp3`
-- **Solo minúsculas y guiones bajos**: ❌ `myPlugin` → ✅ `my_plugin`
+- **3-4 letters** for short names: `msp`, `ecm`, `su`
+- **Project acronyms**: `nmr63`, `cmk`
+- **No numbers at the beginning**: ❌ `3wp` → ✅ `wp3`
+- **Only lowercase and underscores**: ❌ `myPlugin` → ✅ `my_plugin`
 
 ### Text Domain
 
-El text domain se genera automáticamente eliminando guiones:
-- `mi-super-plugin` → `misuperplugin`
+The text domain is automatically generated by removing hyphens:
+- `my-super-plugin` → `mysuperplugin`
 - `e-commerce-manager` → `ecommercemanager`
 
-### Constantes
+### Constants
 
-Las constantes se generan en mayúsculas:
-- Plugin: `Mi Super Plugin` → `MI_SUPER_PLUGIN_VERSION`
+Constants are generated in uppercase:
+- Plugin: `My Super Plugin` → `MY_SUPER_PLUGIN_VERSION`
 - Plugin: `E-Commerce Manager` → `E_COMMERCE_MANAGER_VERSION`
 
-### Después de generar el plugin
+### After generating the plugin
 
-1. **Copia el plugin** a tu directorio de plugins:
+1. **Copy the plugin** to your plugins directory:
    ```bash
-   cp -r mi-plugin /path/to/wordpress/wp-content/plugins/
+   cp -r my-plugin /path/to/wordpress/wp-content/plugins/
    ```
 
-2. **Activa el plugin** en WordPress admin
+2. **Activate the plugin** in WordPress admin
 
-3. **Personaliza** los archivos según tus necesidades:
-   - Modifica Custom Post Types en `includes/post-types/`
-   - Personaliza logos en `includes/custom-login/`
-   - Ajusta estilos en `includes/theme/style.css`
+3. **Customize** the files according to your needs:
+   - Modify Custom Post Types in `includes/post-types/`
+   - Customize logos in `includes/custom-login/`
+   - Adjust styles in `includes/theme/style.css`
 
-4. **Elimina** lo que no necesites
+4. **Remove** what you don't need
 
 ---
 
 ## Troubleshooting
 
-### El directorio ya existe
+### Directory already exists
 
 ```bash
-# Elimina el directorio anterior
-rm -rf mi-plugin
+# Remove the previous directory
+rm -rf my-plugin
 
-# Genera de nuevo
+# Generate again
 npm start
 ```
 
-### Error de permisos
+### Permission error
 
 ```bash
-# Da permisos de escritura al directorio de destino
+# Give write permissions to the output directory
 chmod 755 /path/to/output
 ```
 
-### Dependencias no instaladas
+### Dependencies not installed
 
 ```bash
-# Reinstala dependencias
+# Reinstall dependencies
 cd scaffold
 rm -rf node_modules package-lock.json
 npm install
@@ -284,47 +284,47 @@ npm install
 
 ---
 
-## Comandos de Linting
+## Linting Commands
 
-### Ejecutar todos los linters
+### Run all linters
 ```bash
 composer lint
-# o
+# or
 ./lint.sh
 ```
 
-### Solo PHPCS
+### Only PHPCS
 ```bash
 composer phpcs
-# o
+# or
 ./lint.sh phpcs
 ```
 
-### Solo PHPStan
+### Only PHPStan
 ```bash
 composer phpstan
-# o
+# or
 ./lint.sh phpstan
 ```
 
-### Auto-corregir
+### Auto-fix
 ```bash
 composer lint:fix
-# o
+# or
 ./lint.sh fix
 ```
 
 ---
 
-## Próximos pasos
+## Next steps
 
-Una vez generado tu plugin:
+Once your plugin is generated:
 
-1. ✅ Personaliza los Custom Post Types
-2. ✅ Cambia los logos en `includes/custom-login/`
-3. ✅ Ajusta los estilos del tema
-4. ✅ Añade tus propias funcionalidades
-5. ✅ Actualiza el `readme.txt` con información específica
-6. ✅ **Añade linting** con el scaffold `lint` para mantener calidad de código
+1. ✅ Customize the Custom Post Types
+2. ✅ Change the logos in `includes/custom-login/`
+3. ✅ Adjust the theme styles
+4. ✅ Add your own functionalities
+5. ✅ Update the `readme.txt` with specific information
+6. ✅ **Add linting** with the `lint` scaffold to maintain code quality
 
-¡Disfruta desarrollando plugins de WordPress más rápido!
+Enjoy developing WordPress plugins faster!
